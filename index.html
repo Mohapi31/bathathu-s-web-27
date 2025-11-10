@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bathathu’s 20th Birthday Invitation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Envelope (Opening Animation) -->
+<div class="envelope" id="envelope">
+  <div class="flap-wrapper">
+    <div class="flap">
+      <h2>For You 💌</h2>
+      <p>Click to open Bathathu’s 20th birthday invitation</p>
+      <button class="btn" onclick="openEnvelope()">Open</button>
+    </div>
+  </div>
+  <div class="letter"></div>
+</div>
+
+  <!-- Invitation Page -->
+  <section class="invitation" id="invitation">
+    <h1>Bathathu’s 20th Birthday</h1>
+    <h3>Gracefully turning twenty</h3>
+    <p>You’re warmly invited to celebrate Bathathu’s 20th birthday luncheon an intimate evening of love, laughter, and refined elegance. Join us for music, smiles, and memories as we toast this special milestone.</p>
+    <div class="buttons">
+      <button class="btn" onclick="openPage('date')">Date & Time</button>
+      <button class="btn" onclick="openPage('dress')">Dress Code</button>
+      <button class="btn" onclick="openPage('location')">Location</button>
+      <a href="mailto:bathathumalobola@gmail.com?subject=RSVP%20to%20Bathathu's%2020th%20Birthday" class="btn">RSVP</a>
+
+
+    </div>
+  </section>
+
+  <!-- Date Page -->
+  <section class="page" id="date">
+    <h2>🗓 Date & Time</h2>
+    <p>November 29th, 2025<br>01:00 PM | at Bathathu's house </p>
+    <button class="btn back" onclick="goBack()">Back</button>
+  </section>
+
+  <!-- Dress Code Page -->
+  <section class="page" id="dress">
+    <h2>👗 Dress Code Inspiration,<br> /h2>
+    <h2></h2> Dress code: Smart casual in soft pastel colours — think elegant, relaxed, and perfectly photo-ready.</h2>
+
+    <div class="gallery">
+      <img src="images 1/download (1).jpg" alt="dress1" />
+      <img src="images 1/undefined (2).jpg" alt="dress2" />
+      <img src="images 1/download (4).jpg" alt="dress3" />
+      <img src="images 1/download.jpg" alt="dress4" />
+      <img src="imagse 1/Outfit ideas, yellow, summer.jpg" alt="dress5" />
+      <img src="images 1/undefined (1).jpg" alt="dress7" />
+      <img src="images 1/undefined (11).jpg" alt="dress8" />
+      <img src="images 1/undefined (10).jpg" alt="dress9" />
+      <img src="images 1/undefined (12).jpg" alt="dress10" />
+      <img src="images 1/undefined (13).jpg" alt="dress11" />
+      <img src="images 1/Explore stylish spring work outfits featuring….jpg" alt="dress12" />
+      <img src="images 1/jeans and pink blaizer.jpg" alt="dress12" />
+      <img src="images 1/Summer vibes 🌸.jpg" alt="dress12" />
+      <img src="images 1/yellow and pink.jpg" alt="dress12" />
+    </div>
+    <button class="btn back" onclick="goBack()">Back</button>
+  </section>
+
+  <!-- Location Page -->
+  <section class="page" id="location">
+    <h2>📍 Location</h2>
+    <p>The celebration will be held at:<br />
+      <strong>2925 Laborskis Street</strong>
+    </p>
+    <a href="https://www.google.com/maps/place/2925+Laborskis+St,+Geluksdal,+Brakpan,+1546/@-26.3486853,28.3549769,17z" target="_blank" class="btn">Open in Maps</a>
+    <button class="btn back" onclick="goBack()">Back</button>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    function openEnvelope() {
+      const envelope = document.getElementById('envelope');
+      const invitation = document.getElementById('invitation');
+
+      envelope.classList.add('open');
+
+      setTimeout(() => {
+        envelope.style.display = 'none';
+        invitation.style.display = 'flex';
+      }, 1500);
+    }
+
+    function openPage(pageId) {
+      document.getElementById('invitation').style.display = 'none';
+      document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+      document.getElementById(pageId).style.display = 'block';
+    }
+
+    function goBack() {
+      document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+      document.getElementById('invitation').style.display = 'flex';
+    }
+
+    window.onload = () => {
+      document.getElementById('envelope').style.display = 'block';
+      document.getElementById('invitation').style.display = 'none';
+      document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+    };
+  </script>
+
+</body>
+</html>

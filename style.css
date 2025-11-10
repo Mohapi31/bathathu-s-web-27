@@ -1,0 +1,213 @@
+/* style.css */
+
+/* RESET & BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(135deg, #f8f0f8, #d27aa3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-x: hidden;
+  color: #333;
+}
+
+/* BUTTONS */
+.btn {
+  background: #ff6f91;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  margin: 0.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #ff4f70;
+  transform: scale(1.05);
+}
+
+/* ENVELOPE */
+.envelope {
+  position: relative;
+  width: 350px;
+  height: 220px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+
+.flap h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.flap p {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* INVITATION */
+.invitation {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 220, 247, 0.9);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  max-width: 700px;
+}
+
+.invitation h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #d94f70;
+}
+
+.invitation h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* PAGE SECTIONS */
+.page {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(246, 203, 235, 0.95);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  max-width: 700px;
+}
+
+.page h2 {
+  font-size: 2rem;
+  color: #d94f70;
+  margin-bottom: 1rem;
+}
+
+.page p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* BACK BUTTON */
+.back {
+  background: #ff6f91;
+  color: #fff;
+}
+
+.back:hover {
+  background: #ff4f70;
+  color: #fff;
+}
+.envelope {
+  position: relative;
+  width: 350px;
+  height: 220px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Flap wrapper controls the rotation */
+.flap-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: top center; /* flap rotates from the top */
+  transition: transform 1s ease-in-out;
+}
+
+/* Flap itself */
+.flap {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+  border-radius: 12px 12px 0 0; /* flap rounded on top */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+
+/* Flap title */
+.flap h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.flap p {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Open state (page-like flip) */
+.envelope.open .flap-wrapper {
+  transform: rotateX(-180deg);
+}
